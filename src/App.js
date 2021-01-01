@@ -1,17 +1,8 @@
-// import logo from './logo.svg';
-import './App.css';
-import './Styles.scss';
-import BasicCalander from './BasicCalander';
+import React from 'react';
+import Calander from './googleCalendar/Calander';
 
-
-function App() {
-  return (
-    <div className="app">
-      <div className="example">
-        <BasicCalander />
-      </div>
-     </div>
-  );
+function App (props) {
+  return <Calander />;
 }
 
 export default App;
