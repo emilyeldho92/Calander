@@ -1,8 +1,8 @@
 import React from 'react';
-import Calander from './googleCalendar/Calander';
+import BasicCalander from './googleCalendar/Calander';
 
 function App (props) {
-  return <Calander />;
+  return <BasicCalander />;
 }
 
 export default App;

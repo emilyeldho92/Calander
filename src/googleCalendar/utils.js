@@ -16,9 +16,7 @@ export const getAllDaysInTheWeek = (currentDate = moment ()) => {
   return days;
 };
 
-export const times = [
-8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16
-];
+export const times = [ 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 ];
 
 export const isTodaysDate = dateStamp => {
   const today = moment ();

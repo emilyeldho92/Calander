@@ -1,5 +1,5 @@
 import React from 'react';
-// import {Row, Col} from 'antd';
+import {Row, Col} from 'antd';
 import TimeSlot from './TimeSlot';
 import {row, timeCol, timeString} from '../styles';
 import moment from 'moment';

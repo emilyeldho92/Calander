@@ -1,6 +1,5 @@
 import React from 'react';
-import { Row, Col} from 'react-bootstrap';
-// import {Col} from 'antd';
+import {Col} from 'antd';
 import {col, slot, lightHighlighter} from '../styles';
 import {isTodaysDate} from '../../utils';
 

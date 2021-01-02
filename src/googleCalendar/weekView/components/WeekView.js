@@ -1,12 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import moment from 'moment';
-import AddEventModal from './AddEventModal';
 import WeekToolbar from './WeekToolbar';
 import WeekHeader from './WeekHeader';
 import TimeSlotGroup from './TimeSlotGroup';
 import {times, getAllDaysInTheWeek} from '../../utils';
 import {container} from '../styles';
-import { Row, Col} from 'react-bootstrap';
 
 function WeekView(props) {
 
@@ -18,24 +16,21 @@ function WeekView(props) {
     eventEnd: null,
   })
 
-
-  const goToNextWeek = () => {
-    const dateAfter7Days = moment (state.startDate).add (7, 'days');
+  const nextWeek = () => {
+    const nextdays = moment (state.startDate).add (7, 'days');
    setState ({
-      startDate: +dateAfter7Days,
-      weekDays: getAllDaysInTheWeek (dateAfter7Days),
+      startDate: +nextdays,
+      weekDays: getAllDaysInTheWeek (nextdays),
     });
   };
 
-
-  const goToPreviousWeek = () => {
-    const dateBefore7Days = moment (startDate).subtract (7, 'days');
+  const previousWeek = () => {
+    const previousdays = moment (startDate).subtract (7, 'days');
    setState ({
-      startDate: +dateBefore7Days,
-      weekDays: getAllDaysInTheWeek (dateBefore7Days),
+      startDate: +previousdays,
+      weekDays: getAllDaysInTheWeek (previousdays),
     });
   };
-
 
   const goToToday = () => {
    setState ({
@@ -44,27 +39,14 @@ function WeekView(props) {
     });
   };
 
-  const onCurrentEventTimeChange = dates => {
-    setState ({
-      eventStart: +dates[0],
-      eventEnd: +dates[1],
-    });
-  };
+    const { weekDays, startDate } = state;
+    const { events } = props;
 
-    const {
-      weekDays,
-      showAddEventModal,
-      eventStart,
-      eventEnd,
-      startDate,
-    } =state;
-
-    const {events} = props;
     return (
       <div style={container}>
         <WeekToolbar
-          goToPreviousWeek={goToPreviousWeek}
-          goToNextWeek={goToNextWeek}
+          previousWeek={previousWeek}
+          nextWeek={nextWeek}
           startDate={startDate}
           goToToday={goToToday}
         />
