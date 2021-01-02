@@ -99,3 +99,12 @@ export const eventHighlighter = {
   zIndex: 1,
   cursor: 'pointer',
 };
+
+export const buttonStyle = {
+  marginBottom: '13px',
+  display: 'block'
+};
+
+export const marginButton = {
+  marginRight: '20px'
+}
